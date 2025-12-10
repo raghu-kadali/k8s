@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: raghu-backend-service
+  name: raghu-nginx-service
 spec:
-  type: LoadBalancer
   selector:
-    app: raghu-backend
+    app: raghu-nginx
+  type: LoadBalancer
   ports:
-    - name: http
+    - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
